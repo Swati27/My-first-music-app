@@ -6,11 +6,15 @@ import { useDispatch } from 'react-redux';
 
 const SongCard = ({song, i, isPlaying, activeSong, data}) => {
 
-  //const activeSong='Test';
+  const dispatch = useDispatch();
+  const handlePauseClick=()=>{
+    dispatch(playPause(false));
+  };
 
-  const handlePauseClick=()=>{};
-
-  const handlePlayClick=()=>{};
+  const handlePlayClick=()=>{
+    dispatch(setActiveSong({song,data,i}));
+    dispatch(playPause(true));
+  };
   
   return (
   <div className='flex flex-col w-[250px] p-4 bg-white/5

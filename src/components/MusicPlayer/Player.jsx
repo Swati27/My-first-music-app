@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useRef, useEffect } from 'react';
+
+import React, { useEffect, useRef } from 'react';
 
 const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate, onLoadedData, repeat }) => {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
 
   return (
     <audio
-      src={activeSong?.hub?.actions[1]?.uri}
+      src={activeSong?.hub?.actions[1]?.uri}//audio tag in html is supporting to play
       ref={ref}
       loop={repeat}
       onEnded={onEnded}
